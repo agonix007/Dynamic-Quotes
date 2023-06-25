@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    48deg,
+    rgba(0, 27, 112, 1) 0%,
+    rgba(0, 128, 105, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  height: 450px;
+  width: 700px;
+  /* From https://css.glass */
+  background: rgba(0, 255, 245, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(0, 255, 245, 0.31);
+  color: white;
+  padding: 20px;
+}
+.tweet {
+  display: flex;
+  justify-content: end;
+}
+.tweet img {
+  width: 45px;
+  position: absolute;
+  z-index: 3;
+  animation: rotateTweet 1s 0.3s ease-in-out;
+}
+
+@keyframes rotateTweet {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  padding: 20px 20px 0 25px;
+  position: relative;
+}
+.content i {
+  font-size: 7rem;
+  position: relative;
+}
+.quotes {
+  font-size: 2em;
+  padding: 10px 34px 0 10px;
+  font-family: "Satisfy", cursive;
+  position: absolute;
+}
+.author::before {
+  content: "By ";
+}
+.author {
+  font-size: 1.2em;
+  font-family: "Vollkorn", serif;
+  text-align: right;
+  transform: translateY(125px);
+  padding-right: 22px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.btn button {
+  background: none;
+  border: 0;
+  height: 40px;
+  width: 82%;
+  color: white;
+  font-size: 1.2em;
+  font-family: "Alegreya Sans", sans-serif;
+  position: absolute;
+  top: 360px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.1px);
+  -webkit-backdrop-filter: blur(1.1px);
+}
+
+.btn button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .box{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .tweet img{
+        width: 35px;
+    }
+    .content i{
+        font-size: 5rem;
+    }
+    .quotes{
+        font-size: 1.6em;
+    }
+    .author{
+        font-size: 1em;
+        transform: translateY(175px);
+        padding-right: 0;
+    }
+}
