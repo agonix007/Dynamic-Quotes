@@ -39,5 +39,5 @@ const getQuotes = async () => {
 
 getQuotes();
 
-newQuotes.addEventListener("click", getQuotes);
+newQuotes.addEventListener("click", getNewQuotes);
 tweet.addEventListener("click", tweetNow);
